@@ -3,6 +3,7 @@ package cipriano.view;
 import cipriano.NormaMachine;
 import cipriano.util.AnalisadorSemantico;
 import cipriano.util.Excecoes.SemanticException;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import javafx.fxml.FXML;
@@ -17,6 +18,9 @@ public class EditorController {
 
 	@FXML
 	TextArea textArea;
+
+	@FXML
+	Label labelMessage;
 
 	private NormaMachine normaMachine;
 
@@ -43,8 +47,9 @@ public class EditorController {
 	public void analisaSemantica(){
 		try{
 			AnalisadorSemantico.analisa(textArea.getParagraphs());
+			labelMessage.setText("Compilado com sucesso!");
 		}catch (SemanticException e){
-			System.out.println(e.posicao());
+			labelMessage.setText(e.posicao());
 		}
 	}
 

@@ -30,7 +30,17 @@
             </MenuBar>
          </top>
    <center>
-      <TextArea fx:id="textArea" cache="true" onKeyReleased="#analisaSemantica" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-family: Arial;" wrapText="true" BorderPane.alignment="CENTER">
+      <TextArea fx:id="textArea" cache="true" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-family: Arial;" wrapText="true" BorderPane.alignment="CENTER">
       </TextArea>
    </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelMessage" prefHeight="97.0" prefWidth="363.0" />
+            <Button mnemonicParsing="false" onAction="#analisaSemantica" prefHeight="98.0" prefWidth="298.0" text="Compilar" />
+            <Separator orientation="VERTICAL" prefHeight="100.0" prefWidth="66.0" />
+            <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="294.0" text="Compile and Run" />
+         </children>
+      </HBox>
+   </bottom>
       </BorderPane>
