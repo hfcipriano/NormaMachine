@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -28,7 +30,7 @@
             </MenuBar>
          </top>
    <center>
-      <TextArea fx:id="textArea" cache="true" onKeyReleased="#analisaSemantica" prefHeight="200.0" prefWidth="200.0" wrapText="true" BorderPane.alignment="CENTER">
+      <TextArea fx:id="textArea" cache="true" onKeyReleased="#analisaSemantica" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-family: Arial;" wrapText="true" BorderPane.alignment="CENTER">
       </TextArea>
    </center>
       </BorderPane>

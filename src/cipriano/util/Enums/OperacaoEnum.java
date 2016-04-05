@@ -1,5 +1,7 @@
 package cipriano.util.Enums;
 
+import cipriano.util.Excecoes.SemanticException;
+
 /**
  * Created by Henrique on 04/04/2016.
  */
@@ -26,5 +28,14 @@ public enum OperacaoEnum {
 
     public String getValorOperacao() {
         return valorOperacao;
+    }
+
+    public static OperacaoEnum validaSemLancarExcecao(final String operacao){
+        try{
+            OperacaoEnum operacaoEnum = valueOf(operacao);
+            return operacaoEnum;
+        }catch (IllegalArgumentException e){
+            return null;
+        }
     }
 }

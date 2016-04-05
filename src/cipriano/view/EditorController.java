@@ -1,6 +1,7 @@
 package cipriano.view;
 
 import cipriano.NormaMachine;
+import cipriano.util.AnalisadorSemantico;
 import cipriano.util.Excecoes.SemanticException;
 import javafx.scene.control.TextArea;
 
@@ -40,13 +41,10 @@ public class EditorController {
 
 	@FXML
 	public void analisaSemantica(){
-		int numLinha = 0;
-
 		try{
-			//TODO:Implementar analaisador de semântica
-
+			AnalisadorSemantico.analisa(textArea.getParagraphs());
 		}catch (SemanticException e){
-			System.out.println(e.getMessage());
+			System.out.println(e.posicao());
 		}
 	}
 
