@@ -35,6 +35,10 @@ public class AnalisadorSemantico {
                 throw new SemanticException(ExcecaoEnum.CONDICIONALFALSA.getExcecao(), numLinha, 4);
             }
 
+            if(linha.length > 5){
+                throw new SemanticException(null, numLinha, 5);
+            }
+
             numLinha++;
         }
 
