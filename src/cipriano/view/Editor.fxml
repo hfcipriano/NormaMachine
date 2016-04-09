@@ -39,7 +39,7 @@
             <Label fx:id="labelMessage" prefHeight="97.0" prefWidth="363.0" />
             <Button mnemonicParsing="false" onAction="#analisaSemantica" prefHeight="98.0" prefWidth="298.0" text="Compilar" />
             <Separator orientation="VERTICAL" prefHeight="100.0" prefWidth="66.0" />
-            <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="294.0" text="Compile and Run" />
+            <Button mnemonicParsing="false" onAction="#compileAndRun" prefHeight="96.0" prefWidth="294.0" text="Compile and Run" />
          </children>
       </HBox>
    </bottom>

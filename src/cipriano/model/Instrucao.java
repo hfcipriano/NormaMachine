@@ -16,6 +16,20 @@ public class Instrucao {
      **/
     private Registrador registrador;
 
+    public Boolean executa(){
+        if(OperacaoEnum.ADD.equals(operacaoEnum)){
+            registrador.ADD();
+        }
+        else if(OperacaoEnum.SUB.equals(operacaoEnum)){
+            registrador.SUB();
+        }
+        else if(OperacaoEnum.ZER.equals(operacaoEnum)){
+            return registrador.ZER();
+        }
+        return null;
+    }
+
+
     public OperacaoEnum getOperacaoEnum() {
         return operacaoEnum;
     }

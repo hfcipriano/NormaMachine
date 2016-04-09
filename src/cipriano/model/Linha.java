@@ -3,11 +3,11 @@ package cipriano.model;
 /**
  * Created by Henrique on 04/04/2016.
  */
-public class Linha {
+public class Linha implements Comparable<Linha>{
     /**
     * Valor inteiro que representa o rótulo da linha
     **/
-    private int numero;
+    private Integer numero;
 
     /**
      * Objeto que armazena a ação
@@ -17,18 +17,18 @@ public class Linha {
     /**
      * Objeto que armazena a próxima instrução, caso a instrução retorne verdadeiro
      **/
-    private Linha condicionalVerdadeira;
+    private Integer condicionalVerdadeira;
 
     /**
      * Objeto que armazena a próxima instrução, caso a instrução retorne falso
      **/
-    private Linha getCondicionalFalsa;
+    private Integer getCondicionalFalsa;
 
-    public int getNumero() {
+    public Integer getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
@@ -40,19 +40,30 @@ public class Linha {
         this.instrucao = instrucao;
     }
 
-    public Linha getCondicionalVerdadeira() {
+    public Integer getCondicionalVerdadeira() {
         return condicionalVerdadeira;
     }
 
-    public void setCondicionalVerdadeira(Linha condicionalVerdadeira) {
+    public void setCondicionalVerdadeira(Integer condicionalVerdadeira) {
         this.condicionalVerdadeira = condicionalVerdadeira;
     }
 
-    public Linha getGetCondicionalFalsa() {
+    public Integer getGetCondicionalFalsa() {
         return getCondicionalFalsa;
     }
 
-    public void setGetCondicionalFalsa(Linha getCondicionalFalsa) {
+    public void setGetCondicionalFalsa(Integer getCondicionalFalsa) {
         this.getCondicionalFalsa = getCondicionalFalsa;
+    }
+
+    @Override
+    public int compareTo(Linha o) {
+        if(this.numero < o.getNumero()){
+            return -1;
+        }
+        if(this.numero > o.getNumero()){
+            return 1;
+        }
+        return 0;
     }
 }
