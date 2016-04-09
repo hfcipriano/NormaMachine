@@ -61,7 +61,7 @@ public class Interpretador {
 
             String[] elementos = cs.toString().split(" ");
 
-            linha.setNumero(verificaLinha(new Integer(elementos[0].split("")[0])));
+            linha.setNumero(verificaLinha(new Integer(elementos[0].split(":")[0])));
 
             Instrucao instrucao = new Instrucao();
             instrucao.setOperacaoEnum(OperacaoEnum.valueOf(elementos[1].toUpperCase()));
@@ -93,7 +93,8 @@ public class Interpretador {
                 return registrador;
             }
         }
-        registradores.add(new Registrador(nome));
-        return new Registrador(nome);
+        Registrador registrador = new Registrador(nome);
+        registradores.add(registrador);
+        return registrador;
     }
 }

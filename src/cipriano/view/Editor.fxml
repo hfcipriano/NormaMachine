@@ -36,10 +36,13 @@
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="labelMessage" prefHeight="97.0" prefWidth="363.0" />
-            <Button mnemonicParsing="false" onAction="#analisaSemantica" prefHeight="98.0" prefWidth="298.0" text="Compilar" />
+            <Label fx:id="labelMessage" prefHeight="97.0" prefWidth="430.0">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Button mnemonicParsing="false" onAction="#analisaSemantica" prefHeight="98.0" prefWidth="189.0" text="Compilar" />
             <Separator orientation="VERTICAL" prefHeight="100.0" prefWidth="66.0" />
-            <Button mnemonicParsing="false" onAction="#compileAndRun" prefHeight="96.0" prefWidth="294.0" text="Compile and Run" />
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#compileAndRun" prefHeight="96.0" prefWidth="294.0" text="Compile and Run" />
          </children>
       </HBox>
    </bottom>

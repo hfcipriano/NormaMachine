@@ -34,7 +34,7 @@ public class Registrador {
      * @return Retorna verdadeiro caso seja verdade, falso caso possua qualquer valor diferente de 0.
      */
     public Boolean ZER(){
-        if(value.equals(0)){
+        if(value.equals(0D)){
             return true;
         }
         return false;
