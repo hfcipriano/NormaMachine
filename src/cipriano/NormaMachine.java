@@ -9,6 +9,7 @@ import cipriano.view.EditorController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -24,6 +25,7 @@ public class NormaMachine extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("jNormaMachine");
+        this.primaryStage.getIcons().add(new Image("file:resources/images/html_app_32.png"));
         initEditor();
     }
 
