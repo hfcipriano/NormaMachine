@@ -25,7 +25,7 @@ public class NormaMachine extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("jNormaMachine");
-        this.primaryStage.getIcons().add(new Image("file:resources/images/html_app_32.png"));
+        this.primaryStage.getIcons().add(new Image("/cipriano/resources/images/html_app_32.png"));
         initEditor();
     }
 
@@ -61,6 +61,7 @@ public class NormaMachine extends Application {
             VBox vBox = (VBox) loader.load();
 
             dialogStage = new Stage();
+            dialogStage.getIcons().add(new Image("/cipriano/resources/images/html_app_32.png"));
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.setTitle("Registradores");
             dialogStage.setScene(new Scene(vBox));
