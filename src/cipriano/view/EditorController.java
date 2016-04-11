@@ -1,16 +1,17 @@
 package cipriano.view;
 
 import cipriano.NormaMachine;
+import cipriano.model.Registrador;
 import cipriano.util.AnalisadorSemantico;
 import cipriano.util.Excecoes.NormaException;
 import cipriano.util.Excecoes.SemanticException;
 import cipriano.util.Interpretador;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
+
+import java.util.List;
 
 
 public class EditorController {
@@ -23,6 +24,9 @@ public class EditorController {
 
 	@FXML
 	Label labelMessage;
+
+	@FXML
+	CheckBox checkBox;
 
 	private NormaMachine normaMachine;
 
@@ -66,10 +70,39 @@ public class EditorController {
 			AnalisadorSemantico.analisa(textArea.getParagraphs());
 			labelMessage.setText("Compilado com sucesso!");
 
-			Interpretador.populaLinhas(textArea.getParagraphs());
-			String retorno = Interpretador.interpreta();
-			labelMessage.setText(retorno);
+			List<Registrador> registradores = Interpretador.populaLinhas(textArea.getParagraphs());
 
+			if(checkBox.isSelected()){
+				run(registradores);
+			}
+			else{
+				exibeModalRegistradores(registradores);
+			}
+		}catch (NormaException e){
+			labelMessage.setText(e.getMessage());
+		}
+	}
+
+	public void run(List<Registrador> registradores){
+		try{
+			for(Registrador r : Interpretador.getRegistradores()){
+				for(Registrador registrador : registradores){
+					if(r.getNome().equals(registrador.getNome())){
+						r.setValue(registrador.getValue());
+						break;
+					}
+				}
+			}
+
+			String retorno = Interpretador.interpreta();
+
+			labelMessage.setText(retorno);
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+			alert.setHeaderText("Resultado do processamento");
+			alert.setTitle("Saída");
+			alert.setContentText(retorno);
+
+			alert.showAndWait();
 		}catch (NormaException e){
 			labelMessage.setText(e.getMessage());
 		}
@@ -83,6 +116,10 @@ public class EditorController {
 		}catch (SemanticException e){
 			labelMessage.setText(e.getMessage());
 		}
+	}
+
+	public void exibeModalRegistradores(List<Registrador> registradores){
+		normaMachine.showDialog(registradores);
 	}
 
 	public void setNormaMachine(NormaMachine normaMachine) {

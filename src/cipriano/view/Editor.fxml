@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
@@ -11,12 +12,12 @@
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="Arquivo">
                   <items>
                   <MenuItem mnemonicParsing="false" onAction="#fileClose" text="Fechar" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Action">
+                <Menu mnemonicParsing="false" text="Ação">
                   <items>
                   <MenuItem mnemonicParsing="false" onAction="#compileAndRun" text="Compilar e executar" />
                   </items>
@@ -32,18 +33,23 @@
          </top>
    <center>
       <TextArea fx:id="textArea" cache="true" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-family: Arial;" wrapText="true" BorderPane.alignment="CENTER">
-      </TextArea>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin></TextArea>
    </center>
    <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="TOP_RIGHT">
          <children>
-            <Label fx:id="labelMessage" prefHeight="97.0" prefWidth="430.0">
+            <Label fx:id="labelMessage" prefHeight="97.0" prefWidth="388.0">
                <font>
                   <Font size="13.0" />
                </font></Label>
             <Button mnemonicParsing="false" onAction="#analisaSemantica" prefHeight="98.0" prefWidth="189.0" text="Compilar" />
-            <Separator orientation="VERTICAL" prefHeight="100.0" prefWidth="66.0" />
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#compileAndRun" prefHeight="96.0" prefWidth="294.0" text="Compilar e executar" />
+            <Button alignment="CENTER" contentDisplay="RIGHT" defaultButton="true" mnemonicParsing="false" onAction="#compileAndRun" prefHeight="96.0" prefWidth="205.0" text="Compilar e executar" textAlignment="RIGHT" underline="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Button>
+            <CheckBox fx:id="checkBox" mnemonicParsing="false" prefHeight="93.0" prefWidth="193.0" selected="true" text="Inicializar Registradores com 0" />
          </children>
       </HBox>
    </bottom>

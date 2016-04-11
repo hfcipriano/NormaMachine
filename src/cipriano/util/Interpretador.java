@@ -53,7 +53,7 @@ public class Interpretador {
         return null;
     }
 
-    public static void populaLinhas(ObservableList<CharSequence> paragrafos) {
+    public static List<Registrador> populaLinhas(ObservableList<CharSequence> paragrafos) {
         linhas.clear();
         registradores.clear();
         for(CharSequence cs : paragrafos){
@@ -76,6 +76,7 @@ public class Interpretador {
 
             linhas.add(linha);
         }
+        return registradores;
     }
 
     private static Integer verificaLinha(Integer numero) {
@@ -96,5 +97,13 @@ public class Interpretador {
         Registrador registrador = new Registrador(nome);
         registradores.add(registrador);
         return registrador;
+    }
+
+    public static List<Registrador> getRegistradores() {
+        return registradores;
+    }
+
+    public static void setRegistradores(List<Registrador> registradores) {
+        Interpretador.registradores = registradores;
     }
 }

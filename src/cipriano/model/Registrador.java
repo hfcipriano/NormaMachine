@@ -6,14 +6,14 @@ package cipriano.model;
 public class Registrador {
     /**
      * Valor em texto que representa o nome do Registrador
-     * Valor único
+     * Valor Ãºnico
      **/
     private String nome;
 
     /**
      * Objeto que representa o atual valor do Registrador
      **/
-    private Double value;
+    private Integer value;
 
     /**
      * Incrementa o valor do registrador em um.
@@ -34,7 +34,7 @@ public class Registrador {
      * @return Retorna verdadeiro caso seja verdade, falso caso possua qualquer valor diferente de 0.
      */
     public Boolean ZER(){
-        if(value.equals(0D)){
+        if(value.equals(0)){
             return true;
         }
         return false;
@@ -42,7 +42,12 @@ public class Registrador {
 
     public Registrador(String nome) {
         this.nome = nome;
-        value = 0D;
+        value = 0;
+    }
+
+    public Registrador(String nome, Integer value) {
+        this.nome = nome;
+        this.value = value;
     }
 
     public String getNome() {
@@ -53,11 +58,11 @@ public class Registrador {
         this.nome = nome;
     }
 
-    public Double getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 

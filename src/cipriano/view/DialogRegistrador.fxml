@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cipriano.view.DialogRegistradorController">
+   <children>
+      <Label alignment="CENTER" prefHeight="52.0" prefWidth="600.0" text="Inicializar registradores com:" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" editable="true" prefHeight="200.0" prefWidth="353.0">
+        <columns>
+          <TableColumn fx:id="colunaNome" editable="false" prefWidth="301.0" text="Nome" />
+          <TableColumn fx:id="colunaValor" editable="true" minWidth="0.0" prefWidth="298.0" text="Valor" />
+        </columns>
+      </TableView>
+      <Button defaultButton="true" mnemonicParsing="false" onAction="#executar" prefHeight="37.0" prefWidth="100.0" text="Executar" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</VBox>
