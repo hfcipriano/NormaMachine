@@ -6,11 +6,13 @@ import cipriano.util.AnalisadorSemantico;
 import cipriano.util.Excecoes.NormaException;
 import cipriano.util.Excecoes.SemanticException;
 import cipriano.util.Interpretador;
+import cipriano.util.Log;
 import javafx.scene.control.*;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 
+import javax.xml.soap.Text;
 import java.util.List;
 
 
@@ -21,6 +23,9 @@ public class EditorController {
 
 	@FXML
 	TextArea textArea;
+
+	@FXML
+	TextArea textAreaResultado;
 
 	@FXML
 	Label labelMessage;
@@ -97,12 +102,12 @@ public class EditorController {
 			String retorno = Interpretador.interpreta();
 
 			labelMessage.setText(retorno);
-			Alert alert = new Alert(Alert.AlertType.INFORMATION);
-			alert.setHeaderText("Resultado do processamento");
-			alert.setTitle("Saída");
-			alert.setContentText(retorno);
-
-			alert.showAndWait();
+			StringBuilder sb = new StringBuilder();
+			for(Log l : Interpretador.getLOGGER()){
+				sb.append(l);
+				sb.append("\n");
+			}
+			textAreaResultado.setText(sb.toString());
 		}catch (NormaException e){
 			labelMessage.setText(e.getMessage());
 		}

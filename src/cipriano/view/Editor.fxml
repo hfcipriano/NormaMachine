@@ -31,12 +31,6 @@
               </menus>
             </MenuBar>
          </top>
-   <center>
-      <TextArea fx:id="textArea" cache="true" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-family: Arial;" wrapText="true" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="20.0" />
-         </BorderPane.margin></TextArea>
-   </center>
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="TOP_RIGHT">
          <children>
@@ -53,4 +47,21 @@
          </children>
       </HBox>
    </bottom>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="textArea" prefHeight="643.0" prefWidth="477.0" promptText="Entrada">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextArea>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <TextArea fx:id="textAreaResultado" editable="false" prefHeight="643.0" prefWidth="464.0" promptText="Resultado">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextArea>
+         </children>
+      </HBox>
+   </center>
       </BorderPane>

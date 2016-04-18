@@ -26,7 +26,7 @@ public class Registrador {
      * Decrementa o valor do registrador em um.
      */
     public void SUB(){
-        value--;
+        value = value > 0 ? value - 1 : 0;
     }
 
     /**

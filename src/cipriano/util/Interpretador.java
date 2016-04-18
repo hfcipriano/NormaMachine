@@ -17,21 +17,26 @@ import java.util.List;
 public class Interpretador {
     private static List<Linha> linhas = new ArrayList<>();
     private static List<Registrador> registradores = new ArrayList<>();
+    private static List<Log> LOGGER = new ArrayList<>();
 
     public static String interpreta(){
         Collections.sort(linhas);
 
+        LOGGER = new ArrayList<>();
         Boolean continua = Boolean.TRUE;
         Linha linha = linhas.get(0);
         while(linha != null){
+            Integer condicionalProxima;
             Boolean retorno = linha.getInstrucao().executa();
-
-            if(retorno != null && retorno.equals(Boolean.FALSE)){
+                        if(retorno != null && retorno.equals(Boolean.FALSE)){
+                            condicionalProxima = linha.getGetCondicionalFalsa();
                 linha = obtemLinhaPorNumero(linha.getGetCondicionalFalsa());
             }
             else{
+                            condicionalProxima = linha.getCondicionalVerdadeira();
                 linha = obtemLinhaPorNumero(linha.getCondicionalVerdadeira());
             }
+             LOGGER.add(new Log(registradores, condicionalProxima));
         }
         return montaRetorno();
     }
@@ -105,5 +110,9 @@ public class Interpretador {
 
     public static void setRegistradores(List<Registrador> registradores) {
         Interpretador.registradores = registradores;
+    }
+
+    public static List<Log> getLOGGER() {
+        return LOGGER;
     }
 }
