@@ -34,34 +34,37 @@
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="TOP_RIGHT">
          <children>
-            <Label fx:id="labelMessage" prefHeight="97.0" prefWidth="388.0">
+            <Label fx:id="labelMessage">
                <font>
                   <Font size="13.0" />
                </font></Label>
-            <Button mnemonicParsing="false" onAction="#analisaSemantica" prefHeight="98.0" prefWidth="189.0" text="Compilar" />
-            <Button alignment="CENTER" contentDisplay="RIGHT" defaultButton="true" mnemonicParsing="false" onAction="#compileAndRun" prefHeight="96.0" prefWidth="205.0" text="Compilar e executar" textAlignment="RIGHT" underline="true">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin></Button>
-            <CheckBox fx:id="checkBox" mnemonicParsing="false" prefHeight="93.0" prefWidth="193.0" selected="true" text="Inicializar Registradores com 0" />
          </children>
       </HBox>
    </bottom>
+   <left>
+      <TextArea fx:id="textArea" prefHeight="643.0" prefWidth="477.0" promptText="Entrada" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+   </left>
+   <right>
+      <TextArea fx:id="textAreaResultado" editable="false" minHeight="400.0" minWidth="200.0" mouseTransparent="true" prefHeight="643.0" prefWidth="464.0" promptText="Resultado" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+   </right>
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
-            <TextArea fx:id="textArea" prefHeight="643.0" prefWidth="477.0" promptText="Entrada">
+            <Button minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#analisaSemantica" prefHeight="98.0" prefWidth="189.0" text="Compilar" />
+            <Button alignment="CENTER" contentDisplay="RIGHT" defaultButton="true" minHeight="150.0" minWidth="200.0" mnemonicParsing="false" onAction="#compileAndRun" prefHeight="96.0" prefWidth="205.0" text="Compilar e executar" textAlignment="RIGHT" underline="true">
                <font>
-                  <Font size="30.0" />
-               </font>
-            </TextArea>
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <TextArea fx:id="textAreaResultado" editable="false" prefHeight="643.0" prefWidth="464.0" promptText="Resultado">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </TextArea>
+                  <Font size="18.0" />
+               </font></Button>
+            <CheckBox fx:id="checkBox" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="93.0" prefWidth="193.0" selected="true" text="Inicializar Registradores com 0" textAlignment="CENTER" />
          </children>
-      </HBox>
+      </VBox>
    </center>
       </BorderPane>
