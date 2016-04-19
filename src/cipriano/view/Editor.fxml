@@ -49,7 +49,7 @@
       </TextArea>
    </left>
    <right>
-      <TextArea fx:id="textAreaResultado" editable="false" minHeight="400.0" minWidth="200.0" mouseTransparent="true" prefHeight="643.0" prefWidth="464.0" promptText="Resultado" BorderPane.alignment="CENTER">
+      <TextArea fx:id="textAreaResultado" editable="false" minHeight="400.0" minWidth="200.0" prefHeight="643.0" prefWidth="464.0" promptText="Resultado" BorderPane.alignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
