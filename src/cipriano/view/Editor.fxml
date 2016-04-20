@@ -22,6 +22,13 @@
                   <MenuItem mnemonicParsing="false" onAction="#compileAndRun" text="Compilar e executar" />
                   </items>
                 </Menu>
+            <Menu mnemonicParsing="false" text="Macros">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#macroSoma" text="A = A + B" />
+                  <MenuItem mnemonicParsing="false" onAction="#macroProduto" text="A = A * B" />
+                  <MenuItem mnemonicParsing="false" onAction="#macroFatorial" text="!A" />
+              </items>
+            </Menu>
                 <Menu mnemonicParsing="false" text="Ajuda">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#helpAbout" text="Sobre" />

@@ -123,6 +123,61 @@ public class EditorController {
 		}
 	}
 
+	@FXML
+	public void macroSoma(){
+		String sb = "1: ADD A 2\n" +
+				"2: SUB B 3\n" +
+				"3: ADD C 4\n" +
+				"4: ZER B 5 1";
+		textArea.setText(sb);
+	}
+
+	@FXML
+	public void macroProduto(){
+		String string = "1: SUB A 2\n" +
+						"2: SUB B 3\n" +
+						"3: ADD C 4\n" +
+						"4: ADD D 5\n" +
+						"5: ZER B 6 2\n" +
+						"6: ZER A 10 7\n" +
+						"7: SUB C 8\n" +
+						"8: ADD B 9\n" +
+						"9: ZER C 1 7";
+		textArea.setText(string);
+	}
+
+	@FXML
+	public void macroFatorial(){
+		String string = "1: ADD B 2\n" +
+						"2: ADD C 3\n" +
+						"3: SUB A 4\n" +
+						"4: ZER A 5 1\n" +
+						"5: SUB C 6\n" +
+						"6: ADD A 7\n" +
+						"7: ZER C 8 5\n" +
+						"8: SUB B 9\n" +
+						"9: ZER B 25 10\n" +
+						"10: ZER A 13 11\n" +
+						"11: ADD C 12\n" +
+						"12: SUB A 10\n" +
+						"13: ZER C 24 14\n" +
+						"14: ZER D 16 15\n" +
+						"15: SUB D 14\n" +
+						"16: ZER B 20 17\n" +
+						"17: ADD A 18\n" +
+						"18: SUB B 19\n" +
+						"19: ADD D 16\n" +
+						"20: ZER D 23 21\n" +
+						"21: ADD B 22\n" +
+						"22: SUB D 20\n" +
+						"23: SUB C 13\n" +
+						"24: SUB B 9\n" +
+						"25: ZER A 26 28\n" +
+						"27: ADD A 28";
+		textArea.setText(string);
+
+	}
+
 	public void exibeModalRegistradores(List<Registrador> registradores){
 		normaMachine.showDialog(registradores);
 	}
