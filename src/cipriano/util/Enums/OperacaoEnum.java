@@ -17,7 +17,7 @@ public enum OperacaoEnum {
     SUB("SUB"),
 
     /**
-    * ZER: Testa se um determinado registrador cont�m o valor zero
+    * ZER: Testa se um determinado registrador cont�m o valor zero
     **/
     ZER("ZER");
 
@@ -30,6 +30,9 @@ public enum OperacaoEnum {
         return valorOperacao;
     }
 
+    /*
+    * Método utilizado no analisador semântico, para fazer tratamento interno de exceções
+    **/
     public static OperacaoEnum validaSemLancarExcecao(final String operacao){
         try{
             OperacaoEnum operacaoEnum = valueOf(operacao);

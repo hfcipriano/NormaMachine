@@ -7,15 +7,19 @@ import cipriano.util.Enums.OperacaoEnum;
  */
 public class Instrucao {
     /**
-     * Enum que representa a operaÁ„o da instruÁ„o
+     * Enum que representa a opera√ß√£o da instru√ß√£o
      **/
     private OperacaoEnum operacaoEnum;
 
     /**
-     * Objeto que representa o registrador utilizado na instruÁ„o
+     * Objeto que representa o registrador utilizado na instru√ß√£o
      **/
     private Registrador registrador;
 
+    /**
+     * M√©todo que executa a opera√ß√£o contida no operacaoEnum
+     * @return false para opera√ß√µes ADD e SUB e quando ZER resultar em falso. true para quando ZER resultar em verdadeiro.
+     **/
     public Boolean executa(){
         if(OperacaoEnum.ADD.equals(operacaoEnum)){
             registrador.ADD();

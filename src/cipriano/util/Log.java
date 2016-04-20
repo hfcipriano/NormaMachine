@@ -8,6 +8,10 @@ import java.util.List;
 /**
  * Created by Henrique on 18/04/2016.
  */
+
+/*
+* Classe que registra as operações feitas pela Máquina Norma
+**/
 public class Log {
     private List<Integer> registradores = new ArrayList<>();
     private Integer condicionalProxima;

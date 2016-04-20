@@ -15,6 +15,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+* Classe que gerencia o módulo do Java Fx.
+**/
 public class NormaMachine extends Application {
 
     private Stage primaryStage;

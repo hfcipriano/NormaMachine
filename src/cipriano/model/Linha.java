@@ -5,22 +5,22 @@ package cipriano.model;
  */
 public class Linha implements Comparable<Linha>{
     /**
-    * Valor inteiro que representa o r�tulo da linha
+    * Valor inteiro que representa o rótulo da linha
     **/
     private Integer numero;
 
     /**
-     * Objeto que armazena a a��o
+     * Objeto que armazena a ação
      **/
     private Instrucao instrucao;
 
     /**
-     * Objeto que armazena a pr�xima instru��o, caso a instru��o retorne verdadeiro
+     * Objeto que armazena a próxima instrução, caso a instrução retorne verdadeiro
      **/
     private Integer condicionalVerdadeira;
 
     /**
-     * Objeto que armazena a pr�xima instru��o, caso a instru��o retorne falso
+     * Objeto que armazena a próxima instrução, caso a instrução retorne falso
      **/
     private Integer getCondicionalFalsa;
 
@@ -56,6 +56,9 @@ public class Linha implements Comparable<Linha>{
         this.getCondicionalFalsa = getCondicionalFalsa;
     }
 
+    /**
+    * Método que compara a posição da linha. Usado no interpretador para ordenar a entrada do usuário, caso esteja desordenada
+    **/
     @Override
     public int compareTo(Linha o) {
         if(this.numero < o.getNumero()){

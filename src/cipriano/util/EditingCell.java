@@ -12,6 +12,10 @@ import javafx.scene.input.KeyEvent;
 /**
  * Created by Henrique on 11/04/2016.
  */
+
+/**
+* Classe que sobrescreve o comportamento das celulas em Table Views. Necessário para o correto funcionamento em eventos de edição dos valores
+**/
 public class EditingCell extends TableCell<RegistradorViewModel, Integer> {
     private TextField textField;
 

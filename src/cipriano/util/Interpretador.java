@@ -28,12 +28,12 @@ public class Interpretador {
         while(linha != null){
             Integer condicionalProxima;
             Boolean retorno = linha.getInstrucao().executa();
-                        if(retorno != null && retorno.equals(Boolean.FALSE)){
-                            condicionalProxima = linha.getGetCondicionalFalsa();
+            if(retorno != null && retorno.equals(Boolean.FALSE)){
+                condicionalProxima = linha.getGetCondicionalFalsa();
                 linha = obtemLinhaPorNumero(linha.getGetCondicionalFalsa());
             }
             else{
-                            condicionalProxima = linha.getCondicionalVerdadeira();
+                condicionalProxima = linha.getCondicionalVerdadeira();
                 linha = obtemLinhaPorNumero(linha.getCondicionalVerdadeira());
             }
              LOGGER.add(new Log(registradores, condicionalProxima));
